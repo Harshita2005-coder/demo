@@ -42,7 +42,7 @@ app.get("/listings/new", (req, res) => {
 // Create Route
 app.post("/listings", async (req, res) => {
   try {
-    const newListing = new Listing({
+    const newListing = new Listing({ 
       title: req.body.title,
       description: req.body.description,
       image: req.body.image,
@@ -57,6 +57,7 @@ app.post("/listings", async (req, res) => {
     res.status(500).send("Error creating listing");
   }
 });
+
 
 // Show route - must be AFTER /listings/new
 app.get("/listings/:id", async (req, res) => {
